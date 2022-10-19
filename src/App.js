@@ -4,6 +4,7 @@ import Home from "../src/Home.js";
 import Cart from "../src/Cart.js";
 import { CartProvider } from "react-use-cart";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import NavbarComp from "./NavbarComp.js";
 
 function App() {
   return (
@@ -23,10 +24,11 @@ function App() {
             <Route 
               path="user/pcbuild" 
               element={
+              <><NavbarComp />
               <CartProvider>
-                <Home/>
-                <Cart/>
-                </CartProvider>
+                  <Home />
+                  <Cart />
+                </CartProvider></>
               }>
             </Route>
           </Routes>
